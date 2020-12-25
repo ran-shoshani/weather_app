@@ -52,17 +52,20 @@ export default function App() {
   if(currentWeather){
     const {main : {temp}} = currentWeather
     return (
-      <view style={styles.container}>
+      <View style={styles.container}>
+        <View style={styles.main}>
+
+        </View>
         <Text>{temp}</Text>
         <statusbar style= "auto" />
-      </view>
+      </View>
     )
   }else {
     return (
-      <view style = {styles.container}>
+      <View style = {styles.container}>
         <Text>{errorMessage}</Text>
         <StatusBar style= "auto"/>
-      </view>  
+      </View>  
     )
   }
 
@@ -82,4 +85,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+
+  main: {
+    justifyContent: 'center',
+    flex: 1,
+  },
+})
